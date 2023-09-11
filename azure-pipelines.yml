@@ -23,10 +23,13 @@ steps:
 - script: python -m pip install --upgrade pytest-azure-devops
 - script: python -m pip install --upgrade mkdocs
 - script: pytest test/test_cal.py
-- script: mkdir -p ~/.ssh 
-- script: echo "$key1" > ~/.ssh/id_rsa 
-- script: chmod 600 ~/.ssh/id_rsa 
-- script: ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-- script: git config --global credential.helper 'store --file ~/.git-credentials'
-- script: echo "https://bartvanwoesik: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@github.com" > ~/.git-credentials
+# - script: mkdir -p ~/.ssh 
+# - script: echo "$key1" > ~/.ssh/id_rsa 
+# - script: chmod 600 ~/.ssh/id_rsa 
+# - script: ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+- script: git config --global user.email "bartwoesik1@gmail.com"
+- script: git config --global user.name "bartvanwoesik"
+- script: git remote set-url origin https://bartvanwoesik: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@github.com
+# - script: git config --global credential.helper 'store --file ~/.git-credentials'
+# - script: echo "https://bartvanwoesik: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@github.com" > ~/.git-credentials
 - script: mkdocs gh-deploy
