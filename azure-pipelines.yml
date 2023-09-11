@@ -28,5 +28,5 @@ steps:
 - script: chmod 600 ~/.ssh/id_rsa 
 - script: ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 - script: git config --global credential.helper 'store --file ~/.git-credentials'
-- script: echo "https://username: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@github.com" > ~/.git-credentials
+- script: echo "https://bartfvanwoesik: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@github.com" > ~/.git-credentials
 - script: mkdocs gh-deploy
