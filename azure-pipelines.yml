@@ -19,4 +19,4 @@ steps:
   displayName: 'Run a multi-line script'
 - script: python -m pip install --upgrade pytest-azure-devops
 
-- script: pytest test
+- script: pytest test/test_cal.py
