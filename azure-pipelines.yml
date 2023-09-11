@@ -16,14 +16,14 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
+- script: 
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 - script: python -m pip install --upgrade pytest-azure-devops
 - script: python -m pip install --upgrade mkdocs
 - script: pytest test/test_cal.py
-- script: |
+- script: 
     # Set up SSH authentication using the secret key
     mkdir -p ~/.ssh
     echo "$key1" > ~/.ssh/id_rsa
