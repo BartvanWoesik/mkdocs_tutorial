@@ -7,7 +7,7 @@ trigger:
 - main
 
 variables:
- key1: $(KEY1)
+ key1: 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
 
 pool:
   vmImage: ubuntu-latest
@@ -29,7 +29,8 @@ steps:
 # - script: ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 - script: git config --global user.email "bartwoesik1@gmail.com"
 - script: git config --global user.name "bartvanwoesik"
-- script: git remote set-url origin https://bartvanwoesik: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@github.com/bartvanwoesik/mkdocs_tutorial.git
+- script: git remote set-url origin https://bartvanwoesik:$(key1)@github.com/bartvanwoesik/mkdocs_tutorial.git
+- script: git fetch --all
 # - script: git config --global credential.helper 'store --file ~/.git-credentials'
-# - script: echo "https://bartvanwoesik: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@github.com" > ~/.git-credentials
+# - script: echo "https://bartvanwoesik:$(key1)@github.com" > ~/.git-credentials
 - script: mkdocs gh-deploy
