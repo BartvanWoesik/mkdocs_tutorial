@@ -34,5 +34,5 @@ steps:
 - script: git fetch --all
 - script: git config --global credential.helper 'store --file ~/.git-credentials'
 - script: echo "https://bartvanwoesik:$(key1)@github.com" > ~/.git-credentials
-- script: git push origin master
+- script: git push origin main
 - script: mkdocs gh-deploy --force
