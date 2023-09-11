@@ -6,6 +6,9 @@
 trigger:
 - main
 
+variables:
+ key1: $(KEY1)
+
 pool:
   vmImage: ubuntu-latest
 
@@ -20,5 +23,12 @@ steps:
 - script: python -m pip install --upgrade pytest-azure-devops
 - script: python -m pip install --upgrade mkdocs
 - script: pytest test/test_cal.py
+- script: |
+    # Set up SSH authentication using the secret key
+    mkdir -p ~/.ssh
+    echo "$key1" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    
 - script: git remote set-url origin git@github.com:bartvanwoesik/mkdocs_tutorial.git
 - script: mkdocs gh-deploy
