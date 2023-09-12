@@ -7,7 +7,7 @@ trigger:
 - main
 
 variables:
- key1: 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
+ key1: $(KEY2)
 
 pool:
   vmImage: ubuntu-latest
