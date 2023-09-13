@@ -4,11 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-  pr:
-    exclude:
-      - '*'
   branches:
-    - 'main'
+    include:
+      - main
+  paths:
+    include:
+      - '*'
 
 
 variables:
