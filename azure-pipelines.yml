@@ -13,13 +13,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Check pytests!
-  displayName: 'Run pytest before merging'
 
-- script: 
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 - script: python -m pip install --upgrade pytest-azure-devops
 - script: python -m pip install --upgrade mkdocs
 - script: pytest test/test_cal.py
